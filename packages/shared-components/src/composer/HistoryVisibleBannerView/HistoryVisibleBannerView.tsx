@@ -1,0 +1,88 @@
+/*
+ * Copyright 2026 Belgian Secure Communications (BSC)
+ * Copyright (c) 2025 Element Creations Ltd.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only OR LicenseRef-Element-Commercial
+ * Please see LICENSE files in the repository root for full details.
+ *
+ * Modified by Belgian Secure Communications for Beam application on 2026-02-06
+ */
+
+import { Link } from "@vector-im/compound-web";
+import React, { type JSX } from "react";
+
+import { useViewModel } from "../../useViewModel";
+import { _t } from "../../utils/i18n";
+import { type ViewModel } from "../../viewmodel";
+import { Banner } from "../Banner";
+
+export interface HistoryVisibleBannerViewActions {
+    /**
+     * Called when the user dismisses the banner.
+     */
+    onClose: () => void;
+}
+
+export interface HistoryVisibleBannerViewSnapshot {
+    /**
+     * Whether the banner is currently visible.
+     */
+    visible: boolean;
+    // PG_CHANGED:
+    /**
+     * The URL for the "learn more" link about e2ee history sharing.
+     */
+    helpUrl: string;
+}
+
+/**
+ * The view model for the banner.
+ */
+export type HistoryVisibleBannerViewModel = ViewModel<HistoryVisibleBannerViewSnapshot> &
+    HistoryVisibleBannerViewActions;
+
+interface HistoryVisibleBannerViewProps {
+    /**
+     * The view model for the banner.
+     */
+    vm: HistoryVisibleBannerViewModel;
+}
+
+/**
+ * A component to alert that history is shared to new members of the room.
+ *
+ * @example
+ * ```tsx
+ * <HistoryVisibleBannerView vm={historyVisibleBannerViewModel} />
+ * ```
+ */
+export function HistoryVisibleBannerView({ vm }: Readonly<HistoryVisibleBannerViewProps>): JSX.Element {
+    const { visible, helpUrl } = useViewModel(vm);
+
+    const contents = _t(
+        "room|status_bar|history_visible",
+        {},
+        {
+            a: (sub: string) => substituteATag(sub, helpUrl),
+        },
+    );
+
+    return (
+        <>
+            {visible && (
+                <Banner type="info" onClose={() => vm.onClose()}>
+                    {contents}
+                </Banner>
+            )}
+        </>
+    );
+}
+
+// PG_CHANGED: Use helpUrl from viewmodel instead of hardcoded URL
+function substituteATag(sub: string, helpUrl: string): JSX.Element {
+    return (
+        <Link href={helpUrl} target="_blank">
+            {sub}
+        </Link>
+    );
+}
