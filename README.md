@@ -12,7 +12,7 @@ For now, beam-web is based on [element-hq/element-web v1.12.8](https://github.co
 
 
 ## Copyright & License
-Copyright 2026 Belgian Secure Communications (BSC) (regarding possible future modifications for BEAM)
+Copyright 2026 Belgian Secure Communications (BSC) (regarding modifications for BEAM)
 
 Copyright "element-web" (c) 2014-2017 OpenMarket Ltd Copyright (c) 2017 Vector Creations Ltd Copyright (c) 2017-2025 New Vector Ltd
 
