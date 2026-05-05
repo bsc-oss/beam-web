@@ -1,0 +1,66 @@
+/*
+Copyright 2026 Belgian Secure Communications (BSC)
+Copyright 2025 New Vector Ltd.
+
+SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only OR LicenseRef-Element-Commercial
+Please see LICENSE files in the repository root for full details.
+
+Modified by Belgian Secure Communications for Beam application on 2026-04-30
+*/
+
+import * as navigator from "../../../src/utils/permalinks/navigator";
+import { NavigationApi } from "../../../src/modules/Navigation.ts";
+import defaultDispatcher from "../../../src/dispatcher/dispatcher.ts";
+import { permalinkPrefix } from "../../../src/utils/permalinks/MatrixToPermalinkConstructor";
+
+describe("NavigationApi", () => {
+    const api = new NavigationApi();
+
+    describe("toMatrixToLink", () => {
+        // PG_CHANGED: use permalinkPrefix instead of hardcoded "matrix.to" URLs
+        it.each([
+            ["roomId", `${permalinkPrefix}!roomId:server.com`],
+            ["roomAlias", `${permalinkPrefix}#alias:server.com`],
+            ["user", `${permalinkPrefix}@user:server.com`],
+        ])("should call navigateToPermalink with the correct parameters for %s", async (_type, link) => {
+            const spy = jest.spyOn(navigator, "navigateToPermalink");
+
+            await api.toMatrixToLink(link);
+            expect(spy).toHaveBeenCalledWith(link);
+        });
+
+        it("should set auto_join to true when join=true", async () => {
+            const link = `${permalinkPrefix}#alias:server.com?via=server.com`;
+            const spy = jest.spyOn(defaultDispatcher, "dispatch");
+
+            await api.toMatrixToLink(link, true);
+            expect(spy).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    action: "view_room",
+                    room_alias: "#alias:server.com",
+                    auto_join: true,
+                }),
+            );
+        });
+
+        it("should dispatch correct action on openRoom", () => {
+            const spy = jest.spyOn(defaultDispatcher, "dispatch");
+            // Non alias
+            api.openRoom("!foo:m.org");
+            expect(spy).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    action: "view_room",
+                    room_id: "!foo:m.org",
+                }),
+            );
+            // Alias
+            api.openRoom("#bar:m.org");
+            expect(spy).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    action: "view_room",
+                    room_alias: "#bar:m.org",
+                }),
+            );
+        });
+    });
+});

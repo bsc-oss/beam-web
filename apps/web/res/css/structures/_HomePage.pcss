@@ -1,0 +1,112 @@
+/*
+Copyright 2026 Belgian Secure Communications (BSC)
+Copyright 2019-2024 New Vector Ltd.
+Copyright 2017 Vector Creations Ltd
+Copyright 2016 OpenMarket Ltd
+
+SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only OR LicenseRef-Element-Commercial
+Please see LICENSE files in the repository root for full details.
+
+Modified by Belgian Secure Communications for Beam application on 2026-02-09
+*/
+
+.mx_HomePage {
+    max-width: 960px;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mx_HomePage_default {
+    text-align: center;
+    display: flex;
+
+    .mx_HomePage_default_wrapper {
+        margin: auto;
+    }
+
+    img {
+        height: 48px;
+    }
+
+    h1 {
+        font-weight: var(--cpd-font-weight-semibold);
+        font-size: $font-32px;
+        line-height: 1.375;
+        margin-bottom: 4px;
+    }
+
+    h2 {
+        margin-top: 4px;
+        font-weight: var(--cpd-font-weight-semibold);
+        font-size: $font-18px;
+        line-height: $font-25px;
+        color: $muted-fg-color;
+    }
+
+    .mx_MiniAvatarUploader {
+        margin: 0 auto;
+    }
+
+    .mx_HomePage_default_buttons {
+        display: flex;
+        margin: 60px auto 0;
+        width: fit-content;
+
+        .mx_AccessibleButton {
+            padding: 73px 8px 15px; /* top: 20px top padding + 40px icon + 13px margin */
+
+            width: 160px;
+            min-height: 132px;
+            margin: 20px;
+            position: relative;
+            display: inline-block;
+            border-radius: 8px;
+            vertical-align: top;
+            word-break: break-word;
+            box-sizing: border-box;
+
+            font-weight: var(--cpd-font-weight-semibold);
+            font-size: $font-15px;
+            line-height: $font-20px;
+            /* PG_CHANGED */
+            color: var(--cpd-color-text-secondary);
+            background-color: var(--cpd-color-bg-subtle-tertiary);
+
+            svg {
+                top: 20px;
+                left: 60px; /* (160px-40px)/2 */
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                color: $accent; /* on all themes */
+            }
+        }
+    }
+}
+
+/* PG_CHANGED */
+.mx_HomePage_default .mx_HomePage_logo {
+    margin: 0 auto;
+    height: 96px;
+}
+
+.mx_HomePage_default .mx_HomePage_logo_light {
+    display: block;
+}
+
+.mx_HomePage_default .mx_HomePage_logo_dark {
+    display: none;
+}
+
+/* PG_CHANGED: Dark mode: show dark logo, hide light logo */
+.cpd-theme-dark {
+    .mx_HomePage_default .mx_HomePage_logo_light {
+        display: none;
+    }
+
+    .mx_HomePage_default .mx_HomePage_logo_dark {
+        display: block;
+    }
+}

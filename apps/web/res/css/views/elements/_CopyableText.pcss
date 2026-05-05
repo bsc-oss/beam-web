@@ -1,0 +1,56 @@
+/*
+Copyright 2026 Belgian Secure Communications (BSC)
+Copyright 2024 New Vector Ltd.
+Copyright 2022 Šimon Brandner <simon.bra.ag@gmail.com>
+Copyright 2019 New Vector Ltd
+
+SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only OR LicenseRef-Element-Commercial
+Please see LICENSE files in the repository root for full details.
+
+Modified by Belgian Secure Communications for Beam application on 2026-02-09
+*/
+
+.mx_CopyableText {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    max-width: 100%;
+    /* PG_CHANGED */
+    background-color: var(--cpd-color-bg-canvas-disabled);
+    border-radius: 0.375rem;
+
+    &.mx_CopyableText_border {
+        overflow: auto;
+        /* PG_CHANGED */
+        border: 1px solid var(--cpd-color-border-interactive-primary);
+        border-radius: 0.3rem;
+        box-shadow: 0px 1px 10px rgba(81, 34, 0, 0.06);
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: var(--cpd-space-3x) var(--cpd-space-4x);
+    }
+
+    .mx_CopyableText_copyButton {
+        flex-shrink: 0;
+        /* using em here to adapt to the local font size */
+        width: 1em;
+        height: 1em;
+        cursor: pointer;
+        padding-left: 12px;
+        padding-right: 10px;
+        display: block;
+        /* If the copy button is used within a scrollable div, make it stick to the right while scrolling */
+        position: sticky;
+        right: 0;
+        /* center to first line */
+        top: 0.15em;
+
+        svg {
+            width: 1em;
+            height: 1em;
+            color: $message-action-bar-fg-color;
+            display: block;
+        }
+    }
+}

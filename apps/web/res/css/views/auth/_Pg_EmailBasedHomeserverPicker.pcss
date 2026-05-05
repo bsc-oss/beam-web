@@ -1,0 +1,117 @@
+/*
+Copyright 2026 Belgian Secure Communications (BSC)
+Copyright 2025 Belgian Secure Communications
+Copyright 2024 New Vector Ltd.
+Copyright 2019 The Matrix.org Foundation C.I.C.
+
+SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only
+Please see LICENSE files in the repository root for full details.
+
+Modified by Belgian Secure Communications for Beam application on 2026-02-09
+*/
+
+.pg_EmailBasedHomeserverPicker {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: var(--cpd-space-5x) 0;
+    box-sizing: border-box;
+
+    .pg_EmailBasedHomeserverPicker_header {
+        margin-bottom: var(--cpd-space-7x);
+        text-align: center;
+
+        h2 {
+            font-size: var(--cpd-font-size-heading-md);
+            font-weight:  var(--cpd-font-weight-semibold);
+            margin-bottom: var(--cpd-space-3x);
+            color: $primary-content;
+        }
+
+        p {
+            color: $secondary-content;
+            font-size: var(--cpd-font-size-body-sm);
+            line-height: var(--cpd-font-line-height-regular);
+            margin: 0;
+        }
+    }
+
+    .pg_EmailBasedHomeserverPicker_inputContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        label {
+            color: var(--cpd-color-text-primary);
+        }
+
+        .pg_EmailBasedHomeserverPicker_Field {
+            flex: 0 1 auto;
+            display: flex;
+            align-items: stretch;
+            min-width: 0;
+            max-width: 100%;
+
+
+            input::placeholder {
+                color: $info-plinth-fg-color;
+                font-weight: normal;
+            }
+
+            .mx_Field_prefix {
+                color: $info-plinth-fg-color;
+                border-left: none;
+                border-right: none;
+                font-weight: var(--cpd-font-weight-semibold);
+                padding: var(--cpd-space-2x);
+                flex: 0 0 auto;
+                display: flex;
+                align-items: center;
+                cursor: text;
+            }
+        }
+        
+        .mx_Field {
+            margin-top: var(--cpd-space-1-5x);
+            margin-bottom: var(--cpd-space-4x);
+            border-radius: var(--cpd-space-1x);
+        }
+
+        .pg_EmailBasedHomeserverPicker_error {
+            color: $alert;
+            font-size: var(--cpd-font-size-body-sm);
+            margin: calc(var(--cpd-space-2x) * -1) 0 var(--cpd-space-4x);
+        }
+        
+        .pg_EmailBasedHomeserverPicker_Check {
+            margin: var(--cpd-space-2x) 0 var(--cpd-space-3x) 0;
+        }
+
+        .pg_EmailBasedHomeserverPicker_submitButton {
+            margin: var(--cpd-space-2x) 0;
+            padding: var(--cpd-space-3x) var(--cpd-space-4x); 
+            border-radius: var(--cpd-space-2x);
+            font-size: var(--cpd-font-size-body-md);
+        }
+
+        .pg_EmailBasedHomeserverPicker_alternateOptions {
+            margin-top: var(--cpd-space-5x);
+            text-align: center;
+            font-size: var(--cpd-font-size-body-sm);
+            
+            .pg_EmailBasedHomeserverPicker_skipLink {
+                color: $accent;
+                font-weight: var(--cpd-font-weight-medium);
+                text-decoration: none;
+            }
+        }
+
+        .mx_AccessibleButton {
+            svg {
+                margin-right: var(--cpd-space-1x);
+            }
+        }
+    }
+}
