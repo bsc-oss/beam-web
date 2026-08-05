@@ -1,0 +1,45 @@
+/*
+Copyright 2026 Belgian Secure Communications (BSC)
+Copyright 2019-2024 New Vector Ltd.
+
+SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only OR LicenseRef-Element-Commercial
+Please see LICENSE files in the repository root for full details.
+
+Modified by Belgian Secure Communications for Beam application on 2026-02-09
+*/
+
+.mx_AuthHeaderLogo {
+    margin-top: 15px;
+    flex: 1;
+    padding: 0 25px;
+}
+
+.mx_AuthHeaderLogo img {
+    width: 100%;
+}
+
+/* PG_CHANGED: Light mode: show light logo, hide dark logo */
+.mx_AuthHeaderLogo_light {
+    display: block;
+}
+
+.mx_AuthHeaderLogo_dark {
+    display: none;
+}
+
+/* PG_CHANGED: Dark mode: show dark logo, hide light logo */
+.cpd-theme-dark {
+    .mx_AuthHeaderLogo_light {
+        display: none;
+    }
+
+    .mx_AuthHeaderLogo_dark {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .mx_AuthHeaderLogo {
+        display: none;
+    }
+}

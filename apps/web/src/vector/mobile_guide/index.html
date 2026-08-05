@@ -1,0 +1,90 @@
+<!doctype html>
+<!--
+    PG_CHANGED: reworked page for Beam
+    Please note: This page is similar to the one at mobile. so any changes made here can potentially
+    be applied to that site as well. They still share the mobile-apps.ts file for updating the app metadata.
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Beam Mobile Guide</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="apple-itunes-app" content="app-id=id1631335820" />
+        <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+        <div class="mx_HomePage_errorContainer">
+            <!-- populated by JS if needed -->
+        </div>
+
+        <div class="mx_HomePage_container">
+            <header>
+                <div class="mx_HomePage_header">
+                    <div>
+                        <picture>
+                            <source srcset="./assets/beam-logo-light.svg" media="(prefers-color-scheme: light)" />
+                            <img src="./assets/beam-logo.svg" alt="Beam Logo" width="250px" />
+                        </picture>
+                    </div>
+                </div>
+                <hr />
+            </header>
+
+            <main>
+                <div class="mx_HomePage_col mx_Spacer">
+                    <p id="webapp_link_text">
+                        <span id="webapp_text_before_link">The </span>
+                        <a id="back_to_beam_button" href="#" class="mx_DesktopLink">
+                            <span id="webapp_link_text_content">Beam web application</span>
+                        </a>
+                        <span id="webapp_text_after_link"> does </span><b id="webapp_bold_text">not</b>
+                        <span id="webapp_text_after_bold"> work on mobile, please download the app.</span>
+                    </p>
+                </div>
+                <div class="mx_HomePage_col mx_Spacer_2">
+                    <p id="website_link_text">
+                        <span id="website_text_before_link">For more information, visit the </span>
+                        <a id="link_to_beam_website_button" href="#" class="mx_DesktopLink">
+                            <span id="website_link_text_content">Beam website</span>
+                        </a>
+                        <span id="website_text_after_link">.</span>
+                    </p>
+                </div>
+                <div class="mx_HomePage_col mx_Spacer">
+                    <div>
+                        <h1 id="download_heading">Download Beam</h1>
+                        <div class="mx_StoreLinks">
+                            <a
+                                href="https://apps.apple.com/app/"
+                                target="_blank"
+                                class="mx_StoreBadge"
+                                id="app_store_link"
+                            >
+                                <img
+                                    src="./assets/app-store-badge.svg"
+                                    alt="Download on the App Store."
+                                    width="120px"
+                                    height="40px"
+                                />
+                            </a>
+                            <a
+                                href="https://play.google.com/store/apps/details?id="
+                                target="_blank"
+                                class="mx_StoreBadge"
+                                id="play_store_link"
+                            >
+                                <img
+                                    src="./assets/google-play-badge.svg"
+                                    alt="Get it on Google Play."
+                                    width="135px"
+                                    height="40px"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

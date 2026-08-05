@@ -1,0 +1,80 @@
+/*
+Copyright 2026 Belgian Secure Communications (BSC)
+Copyright 2019-2024 New Vector Ltd.
+
+SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only OR LicenseRef-Element-Commercial
+Please see LICENSE files in the repository root for full details.
+
+Modified by Belgian Secure Communications for Beam application on 2026-02-09
+*/
+
+.mx_AuthPage {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $authpage-bg-color;
+    height: 100vh;
+    overflow: auto;
+
+    /* PG_CHANGED: prevent background image to be selectable by right clicking or dragging */
+    img {
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+}
+
+// PG_CHANGED: server notices -> multiple components on auth page
+.mx_AuthPage_content {
+    --mx-authpage-header-width: 206px;
+    --mx-authpage-body-width: 500px;
+    --mx-authpage-modal-width: calc(var(--mx-authpage-header-width) + var(--mx-authpage-body-width));
+
+    display: flex;
+    flex-direction: column;
+    width: var(--mx-authpage-modal-width);
+    max-width: calc(100vw - (var(--cpd-space-4x) * 2));
+    margin: auto;
+
+    @media only screen and (max-width: 480px) {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+}
+
+.mx_AuthPage_modal {
+    display: flex;
+    // PG_CHANGED
+    width: 100%;
+    box-sizing: border-box;
+    /* PG_CHANGED */
+    margin: auto auto;
+    border-radius: var(--cpd-space-3x);
+    box-shadow: 0 9px 50.7px 0 rgba(0,0,0,0.05); /* From Figma design */
+    background-color: $authpage-modal-bg-color;
+
+    @media only screen and (max-height: 768px) {
+        margin-top: 50px;
+    }
+
+    @media only screen and (max-width: 480px) {
+        margin-top: 0;
+    }
+
+    &.mx_AuthPage_modal_withBlur {
+        /* Apply a blurred shadow around the modal */
+        box-shadow: 0 2px 4px 0 rgb(0, 0, 0, 0.33);
+
+        .mx_AuthPage_modalContent {
+            /* Make the modal's background semitransparent */
+            background-color: $authpage-modal-content-with-blur-bg-color;
+        }
+    }
+}
+
+

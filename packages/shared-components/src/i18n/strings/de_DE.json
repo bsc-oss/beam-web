@@ -1,0 +1,251 @@
+{
+    "a11y": {
+        "seek_bar_label": "Audio-Suchleiste"
+    },
+    "action": {
+        "delete": "Löschen",
+        "dismiss": "Ausblenden",
+        "edit": "Bearbeiten",
+        "explore_rooms": "Gruppen erkunden",
+        "invite": "Einladen",
+        "new_room": "Neue Gruppe",
+        "new_video_room": "Neuer Videochat",
+        "open_menu": "Menü öffnen",
+        "pause": "Pausieren",
+        "play": "Abspielen",
+        "remove": "Entfernen",
+        "retry": "Erneut versuchen",
+        "search": "Suchen",
+        "start_chat": "Neuer Chat",
+        "back": "Zurück",
+        "collapse": "Einklappen",
+        "download": "Herunterladen",
+        "go": "Starten",
+        "new_conversation": "neuer Chat",
+        "click": "Klicken",
+        "close": "Schließen",
+        "hide": "Verstecken",
+        "new_section": "Neuer Bereich",
+        "pin": "Anheften",
+        "react": "Reagieren",
+        "reply": "Antworten",
+        "reply_in_thread": "Im Subchat antworten",
+        "unpin": "Loslösen",
+        "view_source": "Quelle anzeigen"
+    },
+    "common": {
+        "encryption_enabled": "Verschlüsselung aktiviert",
+        "preferences": "Einstellungen",
+        "attachment": "Anhang",
+        "state_encryption_enabled": "Experimentelle State-Encryption aktiviert",
+        "loading": "Lädt…",
+        "options": "Optionen"
+    },
+    "left_panel": {
+        "open_dial_pad": "Wähltastatur öffnen",
+        "separator_label": "Klicken oder ziehen zum Ausklappen"
+    },
+    "notifications": {
+        "all_messages": "All Nachrichten",
+        "mentions_keywords": "Erwähnungen und Schlüsselwörter",
+        "mute_room": "Chat stummschalten",
+        "default_settings": "Standardeinstellungen verwenden"
+    },
+    "room": {
+        "context_menu": {
+            "title": "Chatoptionen"
+        },
+        "history_visibility_badge": {
+            "private": "Neue Mitglieder sehen keinen historischen Nachrichtenverlauf",
+            "shared": "Neue Mitglieder sehen den historischen Nachrichtenverlauf",
+            "world_readable": "Jeder kann vergangene Nachrichten lesen"
+        },
+        "status_bar": {
+            "delete_all": "Alle löschen",
+            "exceeded_resource_limit_title": "Deine Nachricht konnte nicht versendet werden, da dein Homeserver ein Ressourcenlimit überschritten hat.",
+            "failed_to_create_room_title": "Es konnte kein Chat mit diesem Nutzer gestartet werden",
+            "homeserver_blocked_title": "Deine Nachricht konnte nicht versendet werden, da der Admin deinen Homeserver gesperrt hat.",
+            "monthly_user_limit_reached_title": "Deine Nachricht konnte nicht versendet werden, da dein Homeserver das monatliche Nutzerlimit erreicht hat.",
+            "requires_consent_agreement_title": "Du kannst erst dann Nachrichten verschicken, wenn du unsere Geschäftsbedingungen gelesen und akzeptiert hast.",
+            "select_messages_to_retry": "Du kannst einzelne oder alle Nachrichten erneut senden oder löschen",
+            "server_connectivity_lost_description": "Nachrichten werden gespeichert und gesendet, wenn die Internetverbindung wiederhergestellt ist.",
+            "server_connectivity_lost_title": "Verbindung zum Server wurde unterbrochen.",
+            "some_messages_not_sent": "Einige Nachrichten konnten nicht gesendet werden",
+            "exceeded_resource_limit_description": "Bitte kontaktieren Sie Ihren Dienstadministrator, um den Dienst weiter nutzen zu können.",
+            "retry_all": "Alle erneut versuchen"
+        },
+        "jump_to_date": "Zu Datum springen",
+        "jump_to_date_beginning": "Der Anfang der Gruppe",
+        "jump_to_date_prompt": "Wählen Sie ein Datum, zu dem Sie springen möchten",
+        "pinned_message_badge": "Angeheftete Nachricht"
+    },
+    "room_list": {
+        "a11y": {
+            "default": "Öffne den Chat %(roomName)s",
+            "invitation": "Öffne die Chat Einladung zu %(roomName)s",
+            "mention": {
+                "one": "Öffne die Chat Einladung zu %(roomName)s mit einer Erwähnung.",
+                "other": "Öffne die Chat Einladung zu %(roomName)s mit %(count)s Erwähnungen."
+            },
+            "unread": {
+                "one": "Öffne den Chat %(roomName)s mit einer ungelesenen Nachricht.",
+                "other": "Öffne den Chat %(roomName)s mit %(count)s ungelesenen Nachrichten."
+            },
+            "unsent_message": "Öffne den Chat %(roomName)s mit einer ungesendeten Nachricht.",
+            "video_call": "Gruppe %(roomName)s mit einem Videoanruf öffnen.",
+            "voice_call": "Gruppe %(roomName)s mit einem Sprachanruf öffnen."
+        },
+        "appearance": "Darstellung",
+        "collapse_filters": "Filter Liste einklappen",
+        "empty": {
+            "no_chats": "Bisher keine Chats",
+            "no_chats_description": "Lege los, indem du jemandem schreibst oder eine Gruppe erstellst",
+            "no_chats_description_no_room_rights": "Lege los, indem du jemandem schreibst",
+            "no_favourites": "Du hast noch keine Chats als Favorit markiert",
+            "no_favourites_description": "In den Chat Einstellungen kannst du einen Chat als Favorit markieren",
+            "no_invites": "Du hast keine ungelesenen Einladungen",
+            "no_lowpriority": "Du hast keine Chats mit niedriger Priorität.",
+            "no_mentions": "Du hast keine ungelesenen Erwähnungen",
+            "no_people": "Du hast noch keine Direktnachrichten",
+            "no_people_description": "Wähle Filter ab, um Chats zu sehen.",
+            "no_rooms": "Du bist noch in keinem Chat",
+            "no_rooms_description": "Wähle Filter ab, um Chats zu sehen.",
+            "no_unread": "Glückwunsch! Du hast keine ungelesenen Nachrichten.",
+            "show_activity": "Alle Aktivitäten ansehen",
+            "show_chats": "Alle Chats anzeigen"
+        },
+        "expand_filters": "Filterliste ausklappen",
+        "filters": {
+            "favourite": "Favoriten",
+            "invites": "Einladungen",
+            "low_priority": "Niedrige Priorität",
+            "mentions": "Erwähnungen",
+            "people": "Personen",
+            "rooms": "Gruppen",
+            "unread": "Ungelesen"
+        },
+        "list_title": "Chatliste",
+        "more_options": {
+            "copy_link": "Chatlink kopieren",
+            "favourited": "Favorisiert",
+            "leave_room": "Chat verlassen",
+            "low_priority": "Niedrige Priorität",
+            "mark_read": "Als gelesen markieren",
+            "mark_unread": "Als ungelesen markieren",
+            "move_to_section": "Verschieben nach"
+        },
+        "notification_options": "Benachrichtigungsoptionen",
+        "open_space_menu": "Community-Menü öffnen",
+        "primary_filters": "Filter für die Chatliste",
+        "room": {
+            "more_options": "Weitere Optionen"
+        },
+        "room_options": "Chatoptionen",
+        "show_message_previews": "Nachrichtenvorschau anzeigen",
+        "sort": "Sortieren",
+        "sort_type": {
+            "activity": "Aktivität",
+            "atoz": "A–Z",
+            "unread_first": "Ungelesen zuerst"
+        },
+        "space_menu": {
+            "home": "Community-Startseite",
+            "space_settings": "Community-Einstellungen"
+        },
+        "section_header": {
+            "toggle": "Abschnitt %(section)s umschalten",
+            "edit_section": "Bereich bearbeiten",
+            "more_options": "Weitere Optionen",
+            "remove_section": "Bereich entfernen",
+            "toggle_unread": "Bereich „%(section)s“ mit ungelesenen Gruppen ein-/ausblenden"
+        },
+        "chat_moved": "Chat verschoben",
+        "collapse_all_sections": "Alle Bereiche einklappen",
+        "expand_all_sections": "Alle Bereiche ausklappen",
+        "section_created": "Bereich erstellt"
+    },
+    "terms": {
+        "tac_button": "Geschäftsbedingungen anzeigen"
+    },
+    "threads": {
+        "error_start_thread_existing_relation": "Kann aus einem Ereignis mit einer bestehenden Beziehung keinen Subchat erstellen."
+    },
+    "time": {
+        "about_day_ago": "vor etwa einem Tag",
+        "about_hour_ago": "vor etwa einer Stunde",
+        "about_minute_ago": "vor etwa einer Minute",
+        "few_seconds_ago": "vor ein paar Sekunden",
+        "in_about_day": "in etwa einem Tag",
+        "in_about_hour": "in etwa einer Stunde",
+        "in_about_minute": "in etwa einer Minute",
+        "in_few_seconds": "in ein paar Sekunden",
+        "in_n_days": "in %(num)s Tagen",
+        "in_n_hours": "in %(num)s Stunden",
+        "in_n_minutes": "In etwa %(num)s Minuten",
+        "n_days_ago": "vor %(num)s Tagen",
+        "n_hours_ago": "vor %(num)s Stunden",
+        "n_minutes_ago": "vor %(num)s Minuten"
+    },
+    "timeline": {
+        "decryption_failure": {
+            "blocked": "Der Absender hat den Empfang dieser Nachricht blockiert, da dein Gerät nicht verifiziert ist.",
+            "historical_event_no_key_backup": "Der Nachrichtenverlauf ist auf diesem Gerät nicht verfügbar",
+            "historical_event_unverified_device": "Für den Zugriff auf den Nachrichtenverlauf musst du dieses Gerät verifizieren",
+            "historical_event_user_not_joined": "Du hast keinen Zugriff auf diese Nachricht",
+            "sender_identity_previously_verified": "Die verifizierte Identität des Absenders wurde zurückgesetzt",
+            "sender_unsigned_device": "Von einem unsicheren Gerät verschickt.",
+            "unable_to_decrypt": "Nachricht kann nicht entschlüsselt werden"
+        },
+        "m.audio": {
+            "audio_player": "Audio-Player",
+            "error_downloading_audio": "Fehler beim Herunterladen der Audiodatei",
+            "unnamed_audio": "Unbenannte Audiodatei"
+        },
+        "m.room.encryption": {
+            "disabled": "Verschlüsselung nicht aktiviert",
+            "enabled": "Nachrichten in dieser Gruppe sind Ende-zu-Ende verschlüsselt. Sie können neue Mitglieder in ihrem Profil überprüfen, indem Sie auf ihr Profilbild tippen.",
+            "enabled_dm": "Nachrichten hier sind Ende-zu-Ende-verschlüsselt. Verifiziere %(displayName)s in deren Profil – klicke auf deren Profilbild.",
+            "enabled_local": "Nachrichten in diesem Chat werden Ende-zu-Ende-verschlüsselt.",
+            "disable_attempt": "Versuch, die Verschlüsselung zu deaktivieren, wurde ignoriert",
+            "parameters_changed": "Einige Verschlüsselungsparameter wurden geändert.",
+            "state_enabled": "Nachrichten und Statusereignisse in dieser Gruppe sind Ende-zu-Ende-verschlüsselt. Wenn Personen beitreten, können Sie sie in ihrem Profil verifizieren. Tippen Sie dazu einfach auf ihr Profilbild.",
+            "unsupported": "Die von dieser Gruppe verwendete Verschlüsselung wird nicht unterstützt."
+        },
+        "mab": {
+            "collapse_reply_chain": "Zitate einklappen",
+            "copy_link_thread": "Link zum Subchat kopieren",
+            "expand_reply_chain": "Zitate ausklappen",
+            "label": "Nachrichtenaktionen",
+            "view_in_room": "In der Gruppe ansehen"
+        },
+        "m.file": {
+            "error_invalid": "Ungültige Datei"
+        },
+        "message_timestamp_received_at": "Empfangen um: %(dateTime)s",
+        "message_timestamp_sent_at": "Gesendet um: %(dateTime)s",
+        "url_preview": {
+            "close": "Vorschau schließen",
+            "show_n_more": {
+                "one": "%(count)s andere Vorschau zeigen",
+                "other": "%(count)s weitere Vorschauen zeigen"
+            },
+            "view_image": "Bild anzeigen",
+            "open_link": "Link öffnen"
+        },
+        "download_action_decrypting": "Entschlüsseln",
+        "download_action_downloading": "Herunterladen"
+    },
+    "widget": {
+        "context_menu": {
+            "move_left": "Nach links schieben",
+            "move_right": "Nach rechts schieben",
+            "remove": "Für alle entfernen",
+            "revoke": "Berechtigungen widerrufen",
+            "screenshot": "Bildschirmfoto",
+            "start_audio_stream": "Audiostream starten"
+        }
+    },
+    "keyboard": {
+        "shift": "Umschalt"
+    }
+}
