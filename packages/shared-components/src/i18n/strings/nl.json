@@ -1,0 +1,251 @@
+{
+    "a11y": {
+        "seek_bar_label": "Audio zoekbalk"
+    },
+    "action": {
+        "delete": "Verwijderen",
+        "dismiss": "Sluiten",
+        "explore_rooms": "Groepen ontdekken",
+        "pause": "Pauze",
+        "play": "Afspelen",
+        "search": "Zoeken",
+        "back": "Terug",
+        "collapse": "Samenvouwen",
+        "download": "Downloaden",
+        "edit": "Bewerken",
+        "go": "Start",
+        "invite": "Uitnodigen",
+        "new_conversation": "Nieuw gesprek",
+        "new_room": "Nieuwe groep",
+        "new_video_room": "Nieuwe video groep",
+        "open_menu": "Open menu",
+        "remove": "Verwijderen",
+        "retry": "Opnieuw proberen",
+        "start_chat": "Gesprek beginnen",
+        "click": "Klik",
+        "close": "Sluiten",
+        "hide": "Verbergen",
+        "new_section": "Nieuwe sectie",
+        "pin": "Vastmaken",
+        "react": "Reageren",
+        "reply": "Beantwoorden",
+        "reply_in_thread": "In discussie beantwoorden",
+        "unpin": "Losmaken",
+        "view_source": "Bron bekijken"
+    },
+    "left_panel": {
+        "open_dial_pad": "Kiestoetsen openen",
+        "separator_label": "Klik of sleep om uit te klappen"
+    },
+    "time": {
+        "about_day_ago": "ongeveer een dag geleden",
+        "about_hour_ago": "ongeveer een uur geleden",
+        "about_minute_ago": "ongeveer een minuut geleden",
+        "few_seconds_ago": "enige tellen geleden",
+        "in_about_day": "over een dag of zo",
+        "in_about_hour": "over ongeveer een uur",
+        "in_about_minute": "over ongeveer een minuut",
+        "in_few_seconds": "over een paar tellen",
+        "in_n_days": "over %(num)s dagen",
+        "in_n_hours": "over %(num)s uur",
+        "in_n_minutes": "over %(num)s minuten",
+        "n_days_ago": "%(num)s dagen geleden",
+        "n_hours_ago": "%(num)s uur geleden",
+        "n_minutes_ago": "%(num)s minuten geleden"
+    },
+    "timeline": {
+        "m.audio": {
+            "error_downloading_audio": "Fout bij downloaden van audio",
+            "unnamed_audio": "Naamloze audio",
+            "audio_player": "Audiospeler"
+        },
+        "decryption_failure": {
+            "blocked": "Je kunt deze boodschap niet ontvangen omdat je toestel niet geverifieerd is.",
+            "historical_event_no_key_backup": "Berichtgeschiedenis is niet beschikbaar op dit apparaat",
+            "historical_event_unverified_device": "Om berichtgeschiedenis te zien, moet je dit apparaat verifiëren",
+            "historical_event_user_not_joined": "Je kunt dit bericht niet lezen",
+            "sender_identity_previously_verified": "De identiteit van de zender is niet meer geverifieerd",
+            "sender_unsigned_device": "Verstuurd vanaf een ongeverifieerd apparaat.",
+            "unable_to_decrypt": "Ontsleuteling bericht niet mogelijk"
+        },
+        "m.file": {
+            "error_invalid": "Ongeldig bestand"
+        },
+        "m.room.encryption": {
+            "disable_attempt": "Poging om versleuteling uit te schakelen genegeerd",
+            "disabled": "Versleuteling niet ingeschakeld",
+            "enabled": "Berichten in deze groep zijn end-to-end versleuteld. Wanneer mensen deelnemen, kun je ze in hun profiel verifiëren door op hun profielfoto te tikken.",
+            "enabled_dm": "Berichten hier zijn end-to-end versleuteld. Verifieer %(displayName)s in het profiel door op de profielfoto te tikken.",
+            "enabled_local": "Berichten in deze chat zullen end-to-end versleuteld zijn.",
+            "parameters_changed": "Sommige versleutelingsparameters zijn gewijzigd.",
+            "state_enabled": "Berichten en toestandsevenementen in deze groep zijn end-to-end versleuteld. Wanneer mensen deelnemen, kun je ze in hun profiel verifiëren door op hun profielfoto te tikken.",
+            "unsupported": "De versleuteling die door deze groep wordt gebruikt, wordt niet ondersteund."
+        },
+        "message_timestamp_received_at": "Ontvangen op: %(dateTime)s",
+        "message_timestamp_sent_at": "Verzonden op: %(dateTime)s",
+        "url_preview": {
+            "close": "Voorbeeld sluiten",
+            "show_n_more": {
+                "one": "%(count)s andere preview weergeven",
+                "other": "%(count)s andere previews weergeven"
+            },
+            "view_image": "Afbeelding bekijken",
+            "open_link": "Link openen"
+        },
+        "download_action_decrypting": "Ontsleutelen",
+        "download_action_downloading": "Downloaden",
+        "mab": {
+            "collapse_reply_chain": "Citaten inklappen",
+            "copy_link_thread": "Link naar discussie kopiëren",
+            "expand_reply_chain": "Citaten uitklappen",
+            "label": "Berichtacties",
+            "view_in_room": "In groep bekijken"
+        }
+    },
+    "common": {
+        "attachment": "Bijlage",
+        "encryption_enabled": "Versleuteling ingeschakeld",
+        "preferences": "Voorkeuren",
+        "state_encryption_enabled": "Experimentele toestandsversleuteling is ingeschakeld",
+        "loading": "Laden…",
+        "options": "Opties"
+    },
+    "notifications": {
+        "all_messages": "Alle berichten",
+        "default_settings": "Stem overeen met de standaardinstellingen",
+        "mentions_keywords": "Vermeldingen & trefwoorden",
+        "mute_room": "Demp groep"
+    },
+    "room": {
+        "context_menu": {
+            "title": "Groepopties"
+        },
+        "history_visibility_badge": {
+            "private": "Nieuwe leden zien de geschiedenis niet",
+            "shared": "Nieuwe leden zien de geschiedenis",
+            "world_readable": "Iedereen kan de geschiedenis zien"
+        },
+        "jump_to_date": "Ga naar datum",
+        "jump_to_date_beginning": "Het begin van de groep",
+        "jump_to_date_prompt": "Kies een datum om naartoe te gaan",
+        "pinned_message_badge": "Vastgezet bericht",
+        "status_bar": {
+            "delete_all": "Alles verwijderen",
+            "exceeded_resource_limit_description": "Neem contact op met je dienstbeheerder om de dienst te blijven gebruiken.",
+            "exceeded_resource_limit_title": "Je bericht is niet verzonden omdat deze homeserver een resourcelimiet heeft overschreden.",
+            "failed_to_create_room_title": "Kon geen chat met deze gebruiker starten",
+            "homeserver_blocked_title": "Je bericht is niet verzonden omdat deze homeserver door de beheerder is geblokkeerd.",
+            "monthly_user_limit_reached_title": "Je bericht is niet verzonden omdat deze homeserver de maandelijks actieve gebruikerslimiet heeft bereikt.",
+            "requires_consent_agreement_title": "Je kunt geen berichten sturen totdat je onze algemene voorwaarden hebt bekeken en ermee akkoord bent gegaan.",
+            "retry_all": "Alles opnieuw proberen",
+            "select_messages_to_retry": "Je kunt alle of afzonderlijke berichten selecteren om opnieuw te proberen of te verwijderen",
+            "server_connectivity_lost_description": "Verzonden berichten worden bewaard totdat je verbinding is hersteld.",
+            "server_connectivity_lost_title": "De verbinding met de server is verbroken.",
+            "some_messages_not_sent": "Sommige van je berichten zijn niet verzonden"
+        }
+    },
+    "room_list": {
+        "a11y": {
+            "default": "Open groep %(roomName)s",
+            "invitation": "Open uitnodiging voor groep %(roomName)s.",
+            "mention": {
+                "one": "Open groep %(roomName)s met 1 ongelezen vermelding.",
+                "other": "Open groep %(roomName)s met %(count)s ongelezen vermeldingen."
+            },
+            "unread": {
+                "one": "Open groep %(roomName)s met 1 ongelezen bericht.",
+                "other": "Open groep %(roomName)s met %(count)s ongelezen berichten."
+            },
+            "unsent_message": "Open groep %(roomName)s met een niet-verzonden bericht.",
+            "video_call": "Groep %(roomName)s met een videogesprek openen.",
+            "voice_call": "Groep %(roomName)s met een audiogesprek openen."
+        },
+        "appearance": "Weergave",
+        "collapse_filters": "Filterlijst inklappen",
+        "empty": {
+            "no_chats": "Nog geen gesprekken",
+            "no_chats_description": "Begin met iemand een bericht te sturen of door een groep te creëren.",
+            "no_chats_description_no_room_rights": "Ga van start door iemand een bericht te sturen",
+            "no_favourites": "Je hebt nog geen favoriete gesprekken",
+            "no_favourites_description": "Je kan een gesprek toevoegen aan je favorieten in de gespreksinstellingen",
+            "no_invites": "Je hebt geen ongelezen uitnodigingen",
+            "no_lowpriority": "Je hebt geen groepen met lage prioriteit",
+            "no_mentions": "Je hebt geen ongelezen vermeldingen",
+            "no_people": "Je hebt nog geen directe gesprekken met iemand",
+            "no_people_description": "Je kan filters de-selecteren om alle andere gesprekken te zien",
+            "no_rooms": "Nog in geen enkele groep",
+            "no_rooms_description": "Je kan filters de-selecteren om je andere gesprekken te zien",
+            "no_unread": "Gefeliciteerd! Je hebt geen ongelezen berichten",
+            "show_activity": "Bekijk alle activiteiten",
+            "show_chats": "Toon alle gesprekken"
+        },
+        "expand_filters": "Filterlijst uitbreiden",
+        "filters": {
+            "favourite": "Favorieten",
+            "invites": "Uitnodigingen",
+            "low_priority": "Lage prioriteit",
+            "mentions": "Vermeldingen",
+            "people": "Personen",
+            "rooms": "Groepen",
+            "unread": "Ongelezen"
+        },
+        "list_title": "Groepenlijst",
+        "more_options": {
+            "copy_link": "Kopieer groepslink",
+            "favourited": "Favoriet gemaakt",
+            "leave_room": "Groep verlaten",
+            "low_priority": "Lage prioriteit",
+            "mark_read": "Markeren als gelezen",
+            "mark_unread": "Markeren als ongelezen",
+            "move_to_section": "Verplaatsen naar"
+        },
+        "notification_options": "Meldingsinstellingen",
+        "open_space_menu": "Open community-menu",
+        "primary_filters": "Filters groepenlijst",
+        "room": {
+            "more_options": "Meer Opties"
+        },
+        "room_options": "Groepsopties",
+        "section_header": {
+            "toggle": "Sectie %(section)s in- of uitklappen",
+            "edit_section": "Sectie bewerken",
+            "more_options": "Meer opties",
+            "remove_section": "Sectie verwijderen",
+            "toggle_unread": "Sectie « %(section)s » met ongelezen groep(en) tonen of verbergen"
+        },
+        "show_message_previews": "Berichtvoorbeelden tonen",
+        "sort": "Orden",
+        "sort_type": {
+            "activity": "Activiteit",
+            "atoz": "A-Z",
+            "unread_first": "Ongelezen eerst"
+        },
+        "space_menu": {
+            "home": "Startpagina van de community",
+            "space_settings": "Community-instellingen"
+        },
+        "chat_moved": "Gesprek verplaatst",
+        "collapse_all_sections": "Alle secties inklappen",
+        "expand_all_sections": "Alle secties uitklappen",
+        "section_created": "Sectie aangemaakt"
+    },
+    "terms": {
+        "tac_button": "Gebruiksvoorwaarden lezen"
+    },
+    "widget": {
+        "context_menu": {
+            "move_left": "Ga naar links",
+            "move_right": "Ga naar rechts",
+            "remove": "Verwijderen voor iedereen",
+            "revoke": "Machtigingen intrekken",
+            "screenshot": "Neem een foto",
+            "start_audio_stream": "Audiostream starten"
+        }
+    },
+    "keyboard": {
+        "shift": "Shift"
+    },
+    "threads": {
+        "error_start_thread_existing_relation": "Kan geen discussie maken vanuit een gebeurtenis met een bestaande relatie"
+    }
+}

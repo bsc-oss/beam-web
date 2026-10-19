@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`<AuthHeaderLogo /> should match snapshot 1`] = `
+<DocumentFragment>
+  <aside
+    class="mx_AuthHeaderLogo"
+  >
+    <img
+      alt="Beam"
+      class="mx_AuthHeaderLogo_light"
+      src="themes/beam/img/logos/beam-logo-light.svg"
+    />
+    <img
+      alt="Beam"
+      class="mx_AuthHeaderLogo_dark"
+      src="themes/beam/img/logos/beam-logo.svg"
+    />
+  </aside>
+</DocumentFragment>
+`;

@@ -1,0 +1,63 @@
+/*
+Copyright 2025 Belgian Secure Communications
+
+SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only
+Please see LICENSE files in the repository root for full details.
+*/
+
+.pg_Login {
+    &_error_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &_serviceMessage {
+        --pg-login-service-message-background: var(--cpd-color-bg-canvas-default);
+        --pg-login-service-message-icon-color: var(--cpd-color-icon-primary);
+
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        gap: var(--cpd-space-3x);
+        padding: var(--cpd-space-4x) var(--cpd-space-5x);
+        border-radius: var(--cpd-space-4x);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.16);
+        background: var(--pg-login-service-message-background);
+        color: var(--cpd-color-text-primary);
+        backdrop-filter: blur(12px);
+        margin-bottom: var(--cpd-space-6x);
+        z-index: 100;
+
+        &--critical {
+            --pg-login-service-message-background: var(--cpd-color-bg-critical-subtle);
+            --pg-login-service-message-icon-color: var(--cpd-color-icon-critical-primary);
+        }
+    }
+
+    &_serviceMessageIcon {
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    &_serviceMessageBody {
+        min-width: 0;
+    }
+
+    &_serviceMessageTitle {
+        margin-bottom: var(--cpd-space-1x);
+        font: var(--cpd-font-body-lg-semibold);
+    }
+
+    &_serviceMessageText {
+        font: var(--cpd-font-body-md-regular);
+        line-height: var(--cpd-font-line-height-regular);
+    }
+}
+
+.cpd-theme-dark .pg_Login {
+    &_serviceMessage {
+        --pg-login-service-message-background: var(--cpd-color-bg-canvas-default);
+    }
+}

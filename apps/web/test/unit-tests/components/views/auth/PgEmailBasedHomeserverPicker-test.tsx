@@ -1,0 +1,214 @@
+/*
+Copyright 2025 Belgian Secure Communications
+
+SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only OR LicenseRef-Element-Commercial
+Please see LICENSE files in the repository root for full details.
+*/
+
+import React from "react";
+import { render, screen, fireEvent, waitFor } from "jest-matrix-react";
+import { AutoDiscovery, AutoDiscoveryAction } from "matrix-js-sdk/src/matrix";
+
+import PgEmailBasedHomeserverPicker from "../../../../../src/components/views/auth/PgEmailBasedHomeserverPicker";
+import SdkConfig from "../../../../../src/SdkConfig";
+import AutoDiscoveryUtils from "../../../../../src/utils/AutoDiscoveryUtils";
+
+// Mock dependencies
+jest.mock("matrix-js-sdk/src/matrix");
+jest.mock("../../../../../src/utils/AutoDiscoveryUtils");
+
+describe("PgEmailBasedHomeserverPicker - PG TEST", () => {
+    let mockOnHomeserverSelected: jest.Mock;
+
+    beforeEach(() => {
+        mockOnHomeserverSelected = jest.fn();
+        jest.clearAllMocks();
+
+        // Setup SdkConfig with pg_service_url
+        SdkConfig.put({
+            pg_service_url: "https://api.example.com",
+        });
+    });
+
+    afterEach(() => {
+        SdkConfig.reset();
+        // Reset fetch mock
+        if (global.fetch && typeof global.fetch === "function" && "mockRestore" in global.fetch) {
+            (global.fetch as jest.MockedFunction<typeof fetch>).mockRestore();
+        }
+    });
+
+    it("should render email input form with default content", () => {
+        render(<PgEmailBasedHomeserverPicker onHomeserverSelected={mockOnHomeserverSelected} />);
+
+        expect(screen.getByText("Enter your email")).toBeInTheDocument();
+        expect(screen.getByText(/Please provide your official government email address/)).toBeInTheDocument();
+        expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
+        expect(screen.getByRole("button", { name: /continue with email/i })).toBeInTheDocument();
+    });
+
+    it("should validate email format and enable/disable continue button", async () => {
+        render(<PgEmailBasedHomeserverPicker onHomeserverSelected={mockOnHomeserverSelected} />);
+
+        const emailInput = screen.getByRole("textbox", { name: /email address/i });
+
+        // Invalid email
+        fireEvent.change(emailInput, { target: { value: "invalid-email" } });
+
+        // Valid email
+        fireEvent.change(emailInput, { target: { value: "test@example.be" } });
+        expect(emailInput).toHaveValue("test@example.be");
+    });
+
+    it("should update email value when typing", async () => {
+        render(<PgEmailBasedHomeserverPicker onHomeserverSelected={mockOnHomeserverSelected} />);
+
+        const emailInput = screen.getByRole("textbox", { name: /email address/i });
+
+        fireEvent.change(emailInput, { target: { value: "user@example.be" } });
+
+        expect(emailInput).toHaveValue("user@example.be");
+    });
+
+    it("should disable continue button when input is empty", async () => {
+        render(<PgEmailBasedHomeserverPicker onHomeserverSelected={mockOnHomeserverSelected} />);
+
+        const emailInput = screen.getByRole("textbox", { name: /email address/i });
+
+        fireEvent.change(emailInput, { target: { value: "test@example.be" } });
+        expect(emailInput).toHaveValue("test@example.be");
+
+        // Clear the input
+        fireEvent.change(emailInput, { target: { value: "" } });
+        expect(emailInput).toHaveValue("");
+    });
+
+    test("should show email is not supported error when api return 403", async () => {
+        // Mock the fetch function
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: false,
+            status: 403,
+            json: async () => ({
+                title: "Err:Homeserver:UnknownEmailDomain",
+            }),
+        });
+
+        render(<PgEmailBasedHomeserverPicker onHomeserverSelected={mockOnHomeserverSelected} />);
+
+        const emailInput = screen.getByRole("textbox", { name: /email address/i });
+        const continueButton = screen.getByRole("button", { name: /continue with email/i });
+
+        // Enter a valid email format
+        fireEvent.change(emailInput, { target: { value: "test@unsupported.com" } });
+
+        // Check the terms checkbox
+        const termsCheckbox = screen.getByRole("checkbox");
+        fireEvent.click(termsCheckbox);
+
+        // Click continue to trigger the API call
+        fireEvent.click(continueButton);
+
+        // Wait for the error message to appear
+        await waitFor(() => {
+            expect(
+                screen.getByText(
+                    "The email domain you entered is not supported. Please check your email or try a different one.",
+                ),
+            ).toBeInTheDocument();
+        });
+    });
+
+    test("should successfully lookup homeserver and call onHomeserverSelected", async () => {
+        // Mock successful fetch response
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: true,
+            status: 200,
+            json: async () => ({
+                baseDomain: "matrix.example.org",
+            }),
+        });
+
+        // Mock AutoDiscovery.findClientConfig
+        const mockFindClientConfig = AutoDiscovery.findClientConfig as jest.MockedFunction<
+            typeof AutoDiscovery.findClientConfig
+        >;
+        const mockDiscoveryResult = {
+            "m.homeserver": {
+                state: AutoDiscoveryAction.SUCCESS,
+                base_url: "https://matrix.example.org",
+            },
+            "m.identity_server": {
+                state: AutoDiscoveryAction.SUCCESS,
+                base_url: "",
+            },
+        };
+        mockFindClientConfig.mockResolvedValue(mockDiscoveryResult);
+
+        // Mock AutoDiscoveryUtils.buildValidatedConfigFromDiscovery
+        const mockBuildValidatedConfig = AutoDiscoveryUtils.buildValidatedConfigFromDiscovery as jest.MockedFunction<
+            typeof AutoDiscoveryUtils.buildValidatedConfigFromDiscovery
+        >;
+        const mockValidatedConfig = {
+            hsUrl: "https://matrix.example.org",
+            hsName: "matrix.example.org",
+            hsNameIsDifferent: false,
+            isUrl: "",
+            isDefault: false,
+            isNameResolvable: true,
+            warning: "",
+        };
+        mockBuildValidatedConfig.mockResolvedValue(mockValidatedConfig);
+
+        render(<PgEmailBasedHomeserverPicker onHomeserverSelected={mockOnHomeserverSelected} />);
+
+        const emailInput = screen.getByRole("textbox", { name: /email address/i });
+        const continueButton = screen.getByRole("button", { name: /continue with email/i });
+
+        // Enter a valid email
+        fireEvent.change(emailInput, { target: { value: "user@example.org" } });
+
+        // Check the terms checkbox
+        const termsCheckbox = screen.getByRole("checkbox");
+        fireEvent.click(termsCheckbox);
+
+        // Click continue to trigger the API call
+        fireEvent.click(continueButton);
+
+        // Wait for the homeserver lookup to complete
+        await waitFor(() => {
+            expect(mockOnHomeserverSelected).toHaveBeenCalledWith(mockValidatedConfig, "user@example.org");
+        });
+    });
+
+    test("should show error when API returns success but no baseDomain", async () => {
+        // Mock fetch response without baseDomain
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: true,
+            status: 200,
+            json: async () => ({}), // No baseDomain in response
+        });
+
+        render(<PgEmailBasedHomeserverPicker onHomeserverSelected={mockOnHomeserverSelected} />);
+
+        const emailInput = screen.getByRole("textbox", { name: /email address/i });
+        const continueButton = screen.getByRole("button", { name: /continue with email/i });
+
+        // Enter a valid email
+        fireEvent.change(emailInput, { target: { value: "user@example.org" } });
+
+        // Check the terms checkbox
+        const termsCheckbox = screen.getByRole("checkbox");
+        fireEvent.click(termsCheckbox);
+
+        // Click continue to trigger the API call
+        fireEvent.click(continueButton);
+
+        // Wait for the error message to appear
+        await waitFor(() => {
+            expect(screen.getByText("No homeserver found for this email address")).toBeInTheDocument();
+        });
+
+        // Verify onHomeserverSelected was not called
+        expect(mockOnHomeserverSelected).not.toHaveBeenCalled();
+    });
+});

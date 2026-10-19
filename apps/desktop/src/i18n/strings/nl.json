@@ -1,0 +1,92 @@
+{
+    "action": {
+        "cancel": "Annuleren",
+        "close": "Sluiten",
+        "close_brand": "Sluit %(brand)s",
+        "copy": "Kopiëren",
+        "cut": "Knippen",
+        "delete": "Verwijderen",
+        "edit": "Bewerken",
+        "minimise": "Minimaliseren",
+        "paste": "Plakken",
+        "paste_match_style": "Plakken zonder stijl",
+        "quit": "Sluiten",
+        "redo": "Opnieuw doen",
+        "select_all": "Alles selecteren",
+        "show_hide": "Tonen/Verbergen",
+        "undo": "Ongedaan maken",
+        "zoom_in": "Inzoomen",
+        "zoom_out": "Uitzoomen"
+    },
+    "common": {
+        "about": "Over",
+        "brand_help": "%(brand)s Hulp",
+        "help": "Hulp",
+        "preferences": "Voorkeuren",
+        "no": "Nee",
+        "yes": "Ja"
+    },
+    "confirm_quit": "Weet u zeker dat u wilt stoppen?",
+    "edit_menu": {
+        "speech": "Spraak",
+        "speech_start_speaking": "Begin met praten",
+        "speech_stop_speaking": "Stop met praten"
+    },
+    "file_menu": {
+        "label": "Bestand"
+    },
+    "menu": {
+        "hide": "Verbergen",
+        "hide_others": "Anderen verbergen",
+        "services": "Diensten",
+        "unhide": "Weer laten zien"
+    },
+    "right_click_menu": {
+        "add_to_dictionary": "Aan woordenboek toevoegen",
+        "copy_email": "E-mailadres kopiëren",
+        "copy_image": "Afbeelding kopiëren",
+        "copy_image_url": "Kopieer afbeeldingsadres",
+        "copy_link_url": "Link kopiëren",
+        "save_image_as": "Afbeelding opslaan als...",
+        "save_image_as_error_description": "De afbeelding opslaan is mislukt",
+        "save_image_as_error_title": "Afbeelding opslaan is mislukt"
+    },
+    "view_menu": {
+        "actual_size": "Werkelijke grootte",
+        "toggle_developer_tools": "Developer Tools wisselen",
+        "toggle_full_screen": "Volledig scherm wisselen",
+        "view": "Bekijken"
+    },
+    "window_menu": {
+        "bring_all_to_front": "Alles naar voren brengen",
+        "label": "Venster",
+        "zoom": "Zoom"
+    },
+    "eol": {
+        "no_more_updates": "Je gebruikt een niet-ondersteunde versie van macOS. Werk bij om %(brand)s-updates te ontvangen.",
+        "title": "Systeem niet ondersteund",
+        "warning": "Je gebruikt een niet-ondersteunde versie van macOS. Werk bij zodat %(brand)s blijft werken."
+    },
+    "icon_overlay": {
+        "description_error": "Fout",
+        "description_notifications": {
+            "one": "Je hebt %(count)s ongelezen melding.",
+            "other": "Je hebt %(count)s ongelezen meldingen."
+        }
+    },
+    "store": {
+        "error": {
+            "backend_changed": "Gegevens wissen en herladen?",
+            "backend_changed_detail": "Geen toegang tot het geheim in de systeemsleutels; deze lijken te zijn gewijzigd.",
+            "backend_changed_title": "Database laden mislukt",
+            "backend_no_encryption": "Je systeem heeft een ondersteunde sleutelbos, maar versleuteling is niet beschikbaar.",
+            "backend_no_encryption_detail": "Electron heeft vastgesteld dat versleuteling niet beschikbaar is op je sleutelbos %(backend)s. Zorg dat de sleutelbos is geïnstalleerd. Als dat al zo is, herstart dan en probeer opnieuw. Optioneel kun je %(brand)s een zwakkere vorm van versleuteling laten gebruiken.",
+            "backend_no_encryption_title": "Geen versleutelingsondersteuning",
+            "unsupported_keyring": "Je systeem heeft een niet-ondersteunde sleutelbos, waardoor de database niet kan worden geopend.",
+            "unsupported_keyring_detail": "De sleutelbos-detectie van Electron vond geen ondersteunde backend. Je kunt de backend eenmalig handmatig configureren door %(brand)s met een opdrachtregelargument te starten. Zie %(link)s.",
+            "unsupported_keyring_title": "Systeem niet ondersteund",
+            "unsupported_keyring_use_basic_text": "Zwakkere versleuteling gebruiken",
+            "unsupported_keyring_use_plaintext": "Geen versleuteling gebruiken"
+        }
+    }
+}

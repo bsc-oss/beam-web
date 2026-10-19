@@ -1,0 +1,331 @@
+/*
+Copyright 2026 Belgian Secure Communications (BSC)
+Copyright 2024, 2025 New Vector Ltd.
+Copyright 2020 The Matrix.org Foundation C.I.C.
+
+SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only OR LicenseRef-Element-Commercial
+Please see LICENSE files in the repository root for full details.
+
+Modified by Belgian Secure Communications for Beam application on 2026-02-06
+*/
+
+import React, { type JSX } from "react";
+import classNames from "classnames";
+import {
+    MenuItem,
+    Separator,
+    ToggleMenuItem,
+    Text,
+    Badge,
+    Heading,
+    IconButton,
+    Link,
+    Form,
+} from "@vector-im/compound-web";
+import ExportArchiveIcon from "@vector-im/compound-design-tokens/assets/web/icons/export-archive";
+import FavouriteIcon from "@vector-im/compound-design-tokens/assets/web/icons/favourite";
+import UserAddIcon from "@vector-im/compound-design-tokens/assets/web/icons/user-add";
+import SettingsIcon from "@vector-im/compound-design-tokens/assets/web/icons/settings";
+import LeaveIcon from "@vector-im/compound-design-tokens/assets/web/icons/leave";
+import UserProfileIcon from "@vector-im/compound-design-tokens/assets/web/icons/user-profile";
+import ThreadsIcon from "@vector-im/compound-design-tokens/assets/web/icons/threads";
+import PollsIcon from "@vector-im/compound-design-tokens/assets/web/icons/polls";
+import PinIcon from "@vector-im/compound-design-tokens/assets/web/icons/pin";
+import LockIcon from "@vector-im/compound-design-tokens/assets/web/icons/lock-solid";
+import LockOffIcon from "@vector-im/compound-design-tokens/assets/web/icons/lock-off";
+import PublicIcon from "@vector-im/compound-design-tokens/assets/web/icons/public";
+import ErrorSolidIcon from "@vector-im/compound-design-tokens/assets/web/icons/error-solid";
+import ChevronDownIcon from "@vector-im/compound-design-tokens/assets/web/icons/chevron-down";
+import { JoinRule, type Room } from "matrix-js-sdk/src/matrix";
+import { Box, Flex, HistoryVisibilityBadge, LinkedText, StatusTextView } from "@element-hq/web-shared-components";
+
+import BaseCard from "./BaseCard.tsx";
+import { _t } from "../../../languageHandler";
+import RoomAvatar from "../avatars/RoomAvatar.tsx";
+import { E2EStatus } from "../../../utils/ShieldUtils.ts";
+import { type RoomPermalinkCreator } from "../../../utils/permalinks/Permalinks.ts";
+import { topicToHtml } from "../../../HtmlUtils.tsx";
+import { useRoomSummaryCardViewModel } from "../../viewmodels/right_panel/RoomSummaryCardViewModel";
+import { useRoomTopicViewModel } from "../../viewmodels/right_panel/RoomSummaryCardTopicViewModel";
+// PG_CHANGED
+import { useSettingValue } from "../../../hooks/useSettings.ts";
+import { UIFeature } from "../../../settings/UIFeature.ts";
+import { useRoomName } from "../../../hooks/useRoomName.ts";
+
+interface IProps {
+    room: Room;
+    permalinkCreator: RoomPermalinkCreator;
+    onSearchChange?: (term: string) => void;
+    onSearchCancel?: () => void;
+    focusRoomSearch?: boolean;
+    searchTerm?: string;
+}
+
+const RoomTopic: React.FC<Pick<IProps, "room">> = ({ room }): JSX.Element | null => {
+    const vm = useRoomTopicViewModel(room);
+
+    const body = topicToHtml(vm.topic?.text, vm.topic?.html);
+
+    if (!body && !vm.canEditTopic) {
+        return null;
+    }
+
+    if (!body) {
+        return (
+            <Flex
+                as="section"
+                direction="column"
+                justify="center"
+                gap="var(--cpd-space-2x)"
+                className="mx_RoomSummaryCard_topic"
+            >
+                <Box flex="1" className="mx_RoomSummaryCard_topic_box">
+                    <Link kind="primary" onClick={vm.onEditClick}>
+                        <Text size="sm" weight="regular">
+                            {_t("right_panel|add_topic")}
+                        </Text>
+                    </Link>
+                </Box>
+            </Flex>
+        );
+    }
+
+    const content = vm.expanded ? <LinkedText as="span">{body}</LinkedText> : body;
+
+    return (
+        <Flex
+            as="section"
+            direction="column"
+            justify="center"
+            gap="var(--cpd-space-2x)"
+            className={classNames("mx_RoomSummaryCard_topic", {
+                mx_RoomSummaryCard_topic_collapsed: !vm.expanded,
+            })}
+        >
+            <Box flex="1" className="mx_RoomSummaryCard_topic_container mx_RoomSummaryCard_topic_box">
+                <Text size="sm" weight="regular" onClick={vm.onTopicLinkClick}>
+                    {content}
+                </Text>
+                <IconButton className="mx_RoomSummaryCard_topic_chevron" size="24px" onClick={vm.onExpandedClick}>
+                    <ChevronDownIcon />
+                </IconButton>
+            </Box>
+            {vm.expanded && vm.canEditTopic && (
+                <Box flex="1" className="mx_RoomSummaryCard_topic_edit">
+                    <Link kind="primary" onClick={vm.onEditClick}>
+                        <Text size="sm" weight="regular">
+                            {_t("action|edit")}
+                        </Text>
+                    </Link>
+                </Box>
+            )}
+        </Flex>
+    );
+};
+
+const RoomSummaryCardView: React.FC<IProps> = ({
+    room,
+    permalinkCreator,
+    onSearchChange,
+    onSearchCancel,
+    focusRoomSearch,
+    searchTerm = "",
+}) => {
+    const vm = useRoomSummaryCardViewModel(room, permalinkCreator, onSearchCancel);
+    // XXX: this name should be part of the view model
+    const name = useRoomName(room);
+
+    // PG_CHANGED: search field removed
+
+    const roomInfo = (
+        <header className="mx_RoomSummaryCard_container">
+            <RoomAvatar room={room} size="80px" viewAvatarOnClick />
+            <Heading
+                as="h1"
+                size="md"
+                weight="semibold"
+                className="mx_RoomSummaryCard_roomName text-primary"
+                title={name}
+            >
+                {name}
+            </Heading>
+            {vm.userStatus && <StatusTextView status={vm.userStatus} />}
+            <Text
+                as="div"
+                size="sm"
+                weight="semibold"
+                className="mx_RoomSummaryCard_alias text-secondary"
+                title={vm.alias}
+            >
+                {vm.alias}
+            </Text>
+
+            <Flex
+                as="section"
+                justify="center"
+                gap="var(--cpd-space-2x)"
+                wrap="wrap"
+                className="mx_RoomSummaryCard_badges"
+            >
+                {!vm.isDirectMessage && vm.roomJoinRule === JoinRule.Public && (
+                    <Badge kind="blue">
+                        <PublicIcon width="1rem" height="1rem" color="var(--cpd-color-icon-info-primary)" />
+                        {_t("common|public_room")}
+                    </Badge>
+                )}
+
+                {vm.isRoomEncrypted && vm.e2eStatus !== E2EStatus.Warning && (
+                    <Badge kind="green">
+                        <LockIcon width="1rem" height="1rem" />
+                        {_t("common|encrypted")}
+                    </Badge>
+                )}
+
+                {!vm.isRoomEncrypted && (
+                    <Badge kind="blue">
+                        <LockOffIcon width="1rem" height="1rem" color="var(--cpd-color-icon-info-primary)" />
+                        {_t("common|unencrypted")}
+                    </Badge>
+                )}
+
+                {vm.e2eStatus === E2EStatus.Warning && (
+                    <Badge kind="red">
+                        <ErrorSolidIcon width="1rem" height="1rem" />
+                        {_t("common|not_trusted")}
+                    </Badge>
+                )}
+
+                {/* PG_CHANGED: hide the history visibility badge in DMs, as you can't invite anyone to a DM */}
+                {!vm.isDirectMessage && <HistoryVisibilityBadge historyVisibility={vm.historyVisibility} />}
+            </Flex>
+
+            <RoomTopic room={room} />
+        </header>
+    );
+
+    const header = onSearchChange && (
+        <Form.Root className="mx_RoomSummaryCard_search" onSubmit={(e) => e.preventDefault()}>
+            {/* PG_CHANGED: searching is not possible in the web version */}
+            {/* <Search
+                placeholder={_t("room|search|placeholder")}
+                name="room_message_search"
+                onChange={(e) => {
+                    setSearchValue(e.currentTarget.value);
+                    onSearchChange(e.currentTarget.value);
+                }}
+                value={searchValue}
+                className="mx_no_textinput"
+                ref={vm.searchInputRef}
+                autoFocus={focusRoomSearch}
+                onKeyDown={vm.onUpdateSearchInput}
+            /> */}
+        </Form.Root>
+    );
+
+    return (
+        <BaseCard
+            id="room-summary-panel"
+            className="mx_RoomSummaryCard"
+            ariaLabelledBy="room-summary-panel-tab"
+            role="tabpanel"
+            header={header}
+        >
+            {roomInfo}
+
+            <Separator />
+
+            <div role="menubar" aria-orientation="vertical">
+                <ToggleMenuItem
+                    Icon={FavouriteIcon}
+                    label={_t("room|context_menu|favourite")}
+                    checked={vm.isFavorite}
+                    onSelect={vm.onFavoriteToggleClick}
+                />
+                {/* PG_CHANGED: don't allow inviting people to DM */}
+                {!vm.isDirectMessage && (
+                    <MenuItem
+                        Icon={UserAddIcon}
+                        label={_t("action|invite")}
+                        disabled={!vm.canInviteToState}
+                        onSelect={vm.onInviteToRoomClick}
+                    />
+                )}
+
+                <Separator />
+
+                <MenuItem Icon={UserProfileIcon} label={_t("common|people")} onSelect={vm.onRoomMembersClick} />
+                {/* PG_CHANGED */}
+                {useSettingValue(UIFeature.Threads) && (
+                    <MenuItem Icon={ThreadsIcon} label={_t("common|threads")} onSelect={vm.onRoomThreadsClick} />
+                )}
+                {!vm.isVideoRoom && (
+                    <>
+                        <MenuItem
+                            Icon={PinIcon}
+                            label={_t("right_panel|pinned_messages_button")}
+                            onSelect={vm.onRoomPinsClick}
+                        >
+                            <Text as="span" size="sm">
+                                {vm.pinCount}
+                            </Text>
+                        </MenuItem>
+                        {/* PG_CHANGED: file view is not possible in the web version */}
+                        {/* <MenuItem
+                            Icon={FilesIcon}
+                            label={_t("right_panel|files_button")}
+                            onSelect={vm.onRoomFilesClick}
+                        /> */}
+                        {/* PG_CHANGED: we don't use extensions */}
+                        {/* <MenuItem
+                            Icon={ExtensionsIcon}
+                            label={_t("right_panel|extensions_button")}
+                            onSelect={vm.onRoomExtensionsClick}
+                        /> */}
+                    </>
+                )}
+
+                <Separator />
+
+                {/* PG_CHANGED: we don't have a matrix.to server */}
+                {/* <MenuItem Icon={LinkIcon} label={_t("action|copy_link")} onSelect={vm.onShareRoomClick} /> */}
+
+                {!vm.isVideoRoom && (
+                    <>
+                        <MenuItem
+                            Icon={PollsIcon}
+                            label={_t("right_panel|polls_button")}
+                            onSelect={vm.onRoomPollHistoryClick}
+                        />
+                        <MenuItem
+                            Icon={ExportArchiveIcon}
+                            label={_t("export_chat|title")}
+                            onSelect={vm.onRoomExportClick}
+                        />
+                    </>
+                )}
+
+                <MenuItem Icon={SettingsIcon} label={_t("common|settings")} onSelect={vm.onRoomSettingsClick} />
+
+                <Separator />
+                <div className="mx_RoomSummaryCard_bottomOptions">
+                    {/* PG_CHANGED */}
+                    {/* <MenuItem
+                        Icon={ErrorIcon}
+                        kind="critical"
+                        label={_t("action|report_room")}
+                        onSelect={vm.onReportRoomClick}
+                    /> */}
+                    <MenuItem
+                        className="mx_RoomSummaryCard_leave"
+                        Icon={LeaveIcon}
+                        kind="critical"
+                        label={_t("action|leave_room")}
+                        onSelect={vm.onLeaveRoomClick}
+                    />
+                </div>
+            </div>
+        </BaseCard>
+    );
+};
+
+export default RoomSummaryCardView;

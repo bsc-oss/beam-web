@@ -1,0 +1,90 @@
+{
+    "brand": "Beam",
+    "website_url": "https://beta.beam.belgium.be",
+    "help_url": "https://beam.belgium.be/{LANG}/help",
+    "help_sections": {
+        "encryption": "encryption",
+        "identity_reset": "encryption18",
+        "device_verification": "encryption-device-verification",
+        "settings": "settings2",
+        "sharing": "e2ee-history-sharing",
+        "supported_browser": "supported-browser"
+    },
+    "mobile_builds": {
+        "ios": "https://apps.apple.com/app/",
+        "apple_app_id": "id12345",
+        "android": "https://play.google.com/store/apps/details?id="
+    },
+    "branding": {
+        "auth_footer_links": null,
+        "auth_header_logo_url": "themes/beam/img/logos/beam-logo-dark-alt.svg",
+        "welcome_background_url": null
+    },
+    "uisi_autorageshake_app": "beam-web",
+    "bug_report_endpoint_url": "https://bugreporting.testserver.local/bugreports/submit",
+    "default_country_code": "GB",
+    "default_server_config": {
+        "m.homeserver": {
+            "base_url": "https://matrix.devserver2.local",
+            "server_name": "devserver2.local"
+        },
+        "m.identity_server": {
+            "base_url": ""
+        }
+    },
+    "default_theme": "dark",
+    "disable_custom_urls": false,
+    "disable_guests": true,
+    "element_call": {
+        "url": "https://call.devserver.local",
+        "participant_limit": 8,
+        "brand": "Beam Call",
+        "use_exclusively": true
+    },
+    "embedded_pages": {
+        "login_for_welcome": true
+    },
+    "enable_presence_by_hs_url": "",
+    "features": {
+        "feature_element_call_video_rooms": false,
+        "feature_group_calls": true,
+        "feature_oidc_native_flow": true,
+        "feature_video_rooms": false,
+        "feature_new_room_list": true,
+        "feature_pg_room_member_load": true,
+        "feature_release_announcement": false
+    },
+    "integrations_jitsi_widget_url": "",
+    "integrations_rest_url": "",
+    "integrations_ui_url": "",
+    "integrations_widgets_urls": [],
+    "logout_redirect_url": "",
+    "permalink_prefix": "https://web.devserver3.local/link",
+    "room_directory": {
+        "servers": [""]
+    },
+    "setting_defaults": {
+        "custom_themes": [],
+        "UIFeature.identityServer": false,
+        "UIFeature.feedback": false,
+        "UIFeature.threads": false,
+        "feature_new_room_list": true,
+        "UIFeature.allowCreatingPublicRooms": false,
+        "UIFeature.allowCreatingPublicSpaces": false,
+        "UIFeature.widgets": false,
+        "UIFeature.locationSharing": false,
+        "UIFeature.slashCommands": false
+    },
+    "show_labs_settings": true,
+    "pg_service_url": "https://serv.devserver3.local",
+    "pg_enable_email_login": true,
+    "blocked_file_extensions": [],
+    "blocked_file_mime_types": [],
+    "oidc_metadata": {
+        "client_uri": "http://localhost:8080",
+        "logo_uri": "https://localhost:8080/themes/beam/img/logos/beam-logo-light.svg",
+        "tos_uri": "http://localhost:8080/tos",
+        "policy_uri": "http://localhost:8080/policy",
+        "contacts": []
+    }
+}

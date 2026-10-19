@@ -1,0 +1,426 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<MatrixChat /> > Multi-tab lockout > shows the lockout page when a second tab opens > after a session is restored 1`] = `
+<div>
+  <main
+    class="mx_SessionLockStolenView mx_SplashPage"
+  >
+    <h1>
+      Test is connected in another tab
+    </h1>
+    <h2>
+      Switch to the other tab to connect to Test. This tab can now be closed.
+    </h2>
+  </main>
+</div>
+`;
+
+exports[`<MatrixChat /> > Multi-tab lockout > shows the lockout page when a second tab opens > during crypto init 1`] = `
+<body
+  style="--emoji-font-family: Twemoji;"
+>
+  <div>
+    <main
+      class="mx_SessionLockStolenView mx_SplashPage"
+    >
+      <h1>
+        Test is connected in another tab
+      </h1>
+      <h2>
+        Switch to the other tab to connect to Test. This tab can now be closed.
+      </h2>
+    </main>
+  </div>
+</body>
+`;
+
+exports[`<MatrixChat /> > Multi-tab lockout > shows the lockout page when a second tab opens > while we are checking the sync store 1`] = `
+<div>
+  <main
+    class="mx_SessionLockStolenView mx_SplashPage"
+  >
+    <h1>
+      Test is connected in another tab
+    </h1>
+    <h2>
+      Switch to the other tab to connect to Test. This tab can now be closed.
+    </h2>
+  </main>
+</div>
+`;
+
+exports[`<MatrixChat /> > Multi-tab lockout > shows the lockout page when a second tab opens > while we were waiting for the lock ourselves 1`] = `
+<div>
+  <main
+    class="mx_SessionLockStolenView mx_SplashPage"
+  >
+    <h1>
+      Test is connected in another tab
+    </h1>
+    <h2>
+      Switch to the other tab to connect to Test. This tab can now be closed.
+    </h2>
+  </main>
+</div>
+`;
+
+exports[`<MatrixChat /> > Multi-tab lockout > waits for other tab to stop during startup 1`] = `
+<div>
+  <div
+    class="mx_ConfirmSessionLockTheftView"
+  >
+    <div
+      class="mx_ConfirmSessionLockTheftView_body"
+    >
+      <p>
+        Test is open in another window. Click "Continue" to use Test here and disconnect the other window.
+      </p>
+      <div
+        class="mx_AccessibleButton mx_AccessibleButton_hasKind mx_AccessibleButton_kind_primary"
+        role="button"
+        tabindex="0"
+      >
+        Continue
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MatrixChat /> > Multi-tab lockout > waits for other tab to stop during startup 2`] = `
+<div>
+  <div
+    class="mx_MatrixChat_splash"
+  >
+    <div
+      class="mx_Spinner"
+    >
+      <svg
+        aria-label="Loading…"
+        class="_icon_1855a_18"
+        data-testid="spinner"
+        fill="currentColor"
+        height="1em"
+        role="progressbar"
+        style="width: 32px; height: 32px;"
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M12 4.031a8 8 0 1 0 8 8 1 1 0 0 1 2 0c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10a1 1 0 1 1 0 2"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MatrixChat /> > Multi-tab lockout > waits for other tab to stop during startup 3`] = `
+<div>
+  <div
+    class="mx_AuthPage"
+    style="background: var(--cpd-color-yellow-200);"
+  >
+    <div
+      style="position: absolute; filter: blur(40px); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;"
+    >
+      <img
+        alt="Belgian Flag Background"
+        src="data:image/svg+xml,%3csvg%20width='1920'%20height='1080'%20viewBox='0%200%201920%201080'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20filter='url(%23filter0_f_642_1250)'%3e%3cpath%20d='M1665.92%20200.09L1948%20339.919C1939.86%20443.225%201923.58%20652.76%201923.58%20664.447C1923.58%20676.134%201638.65%20779.928%201496.19%20830.363C1444.09%20798.711%201329.39%20728.309%201287.38%20699.926C1245.37%20671.543%201006.93%20688.099%20892.961%20699.926C860.398%20707.578%20787.701%20736.032%20757.418%20788.624C719.563%20854.365%20610.885%201051.58%20475.342%201024.45C339.799%20997.323%20207.918%20920.105%2036.9629%20854.364C-133.993%20788.624%20-286.631%20751.057%20-199.933%20699.926C-130.573%20659.02%2025.9729%20513.836%2095.5762%20446.356C238.446%20372.268%20575.472%2087.3922%20631.644%2084.2617C676.581%2081.7573%201036.24%2047.0438%201210.45%2030L1665.92%20200.09Z'%20fill='url(%23paint0_linear_642_1250)'%20fill-opacity='0.32'/%3e%3cpath%20d='M1665.92%20200.09L1948%20339.919C1939.86%20443.225%201923.58%20652.76%201923.58%20664.447C1923.58%20676.134%201638.65%20779.928%201496.19%20830.363C1444.09%20798.711%201329.39%20728.309%201287.38%20699.926C1245.37%20671.543%201006.93%20688.099%20892.961%20699.926C860.398%20707.578%20787.701%20736.032%20757.418%20788.624C719.563%20854.365%20610.885%201051.58%20475.342%201024.45C339.799%20997.323%20207.918%20920.105%2036.9629%20854.364C-133.993%20788.624%20-286.631%20751.057%20-199.933%20699.926C-130.573%20659.02%2025.9729%20513.836%2095.5762%20446.356C238.446%20372.268%20575.472%2087.3922%20631.644%2084.2617C676.581%2081.7573%201036.24%2047.0438%201210.45%2030L1665.92%20200.09Z'%20fill='url(%23paint1_linear_642_1250)'%20fill-opacity='0.64'/%3e%3c/g%3e%3cdefs%3e%3cfilter%20id='filter0_f_642_1250'%20x='-524.5'%20y='-269.5'%20width='2772'%20height='1596'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='149.75'%20result='effect1_foregroundBlur_642_1250'/%3e%3c/filter%3e%3clinearGradient%20id='paint0_linear_642_1250'%20x1='1668.79'%20y1='145.038'%20x2='347.903'%20y2='1259.9'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23FF1100'/%3e%3cstop%20offset='0.322115'%20stop-color='%23EFC333'/%3e%3cstop%20offset='0.706731'%20stop-color='%23F5BB49'/%3e%3cstop%20offset='1'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_642_1250'%20x1='1007.18'%20y1='1095.7'%20x2='846.017'%20y2='11.5307'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"
+      />
+    </div>
+    <div
+      class="mx_AuthPage_content"
+    >
+      <div
+        class="mx_AuthPage_modal"
+        style="position: relative; background: ;"
+      >
+        <div
+          class="mx_AuthPage_modalBlur"
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; filter: blur(40px); background: var(--cpd-color-yellow-200);"
+        />
+        <div
+          class="mx_AuthPage_modalContent glass"
+          style="display: flex; z-index: 1; border-radius: inherit;"
+        >
+          <div
+            class="_glass_sepwu_8"
+          >
+            <div
+              class="mx_Welcome"
+              data-testid="mx_welcome_screen"
+            >
+              <div
+                class="mx_DefaultWelcome"
+              >
+                <a
+                  class="mx_DefaultWelcome_logo"
+                  href="https://beam.belgium.be"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  <img
+                    alt="Test"
+                    src="themes/beam/img/logos/beam-logo-dark-alt.svg"
+                  />
+                </a>
+                <h1
+                  class="_typography_6v6n8_153 _font-heading-md-semibold_6v6n8_112"
+                >
+                  Welcome to Test
+                </h1>
+                <div
+                  class="mx_DefaultWelcome_buttons"
+                >
+                  <a
+                    class="_button_1js3l_11"
+                    data-kind="primary"
+                    data-size="md"
+                    href="#/login"
+                    role="link"
+                    tabindex="0"
+                  >
+                    Sign in
+                  </a>
+                  <a
+                    class="_button_1js3l_11"
+                    data-kind="secondary"
+                    data-size="md"
+                    href="#/register"
+                    role="link"
+                    tabindex="0"
+                  >
+                    Create Account
+                  </a>
+                  <a
+                    class="_button_1js3l_11"
+                    data-kind="tertiary"
+                    data-size="md"
+                    href="#/directory"
+                    role="link"
+                    tabindex="0"
+                  >
+                    Explore groups
+                  </a>
+                </div>
+              </div>
+              <div
+                class="mx_Dropdown mx_LanguageDropdown mx_AuthBody_language"
+              >
+                <div
+                  aria-describedby="mx_LanguageDropdown_value"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-label="Language Dropdown"
+                  aria-owns="mx_LanguageDropdown_input"
+                  class="mx_AccessibleButton mx_Dropdown_input mx_no_textinput"
+                  role="button"
+                  tabindex="0"
+                >
+                  <div
+                    class="mx_Dropdown_option"
+                    id="mx_LanguageDropdown_value"
+                  >
+                    <div>
+                      English
+                    </div>
+                  </div>
+                  <svg
+                    class="mx_Dropdown_arrow"
+                    fill="currentColor"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 14.95q-.2 0-.375-.062a.9.9 0 0 1-.325-.213l-4.6-4.6a.95.95 0 0 1-.275-.7q0-.425.275-.7a.95.95 0 0 1 .7-.275q.425 0 .7.275l3.9 3.9 3.9-3.9a.95.95 0 0 1 .7-.275q.425 0 .7.275a.95.95 0 0 1 .275.7.95.95 0 0 1-.275.7l-4.6 4.6q-.15.15-.325.212a1.1 1.1 0 0 1-.375.063"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MatrixChat /> > should render spinner while app is loading 1`] = `
+<div>
+  <div
+    class="mx_MatrixChat_splash"
+  >
+    <div
+      class="mx_Spinner"
+    >
+      <svg
+        aria-label="Loading…"
+        class="_icon_1855a_18"
+        data-testid="spinner"
+        fill="currentColor"
+        height="1em"
+        role="progressbar"
+        style="width: 32px; height: 32px;"
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M12 4.031a8 8 0 1 0 8 8 1 1 0 0 1 2 0c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10a1 1 0 1 1 0 2"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MatrixChat /> > with an existing session > onAction() > room actions > leave_room > for a room > should launch a confirmation modal 1`] = `
+<div
+  aria-describedby="mx_Dialog_content"
+  aria-labelledby="mx_BaseDialog_title"
+  class="mx_QuestionDialog mx_Dialog_fixedWidth"
+  data-focus-lock-disabled="false"
+  role="dialog"
+  tabindex="-1"
+>
+  <div
+    class="mx_Dialog_header"
+  >
+    <h1
+      class="mx_Heading_h3 mx_Dialog_title"
+      id="mx_BaseDialog_title"
+    >
+      Leave group
+    </h1>
+  </div>
+  <div
+    class="mx_Dialog_content"
+    id="mx_Dialog_content"
+  >
+    <span>
+      Are you sure you want to leave the group '!room:server.org'?
+    </span>
+  </div>
+  <div
+    class="mx_Dialog_buttons"
+  >
+    <span
+      class="mx_Dialog_buttons_row"
+    >
+      <button
+        class="cancel"
+        data-testid="dialog-cancel-button"
+        type="button"
+      >
+        Cancel
+      </button>
+      <button
+        class="mx_Dialog_primary"
+        data-testid="dialog-primary-button"
+        type="button"
+      >
+        Leave
+      </button>
+    </span>
+  </div>
+  <div
+    aria-describedby="react-use-id-1"
+    aria-label="Close dialog"
+    class="mx_AccessibleButton mx_Dialog_cancelButton"
+    role="button"
+    tabindex="0"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.293 6.293a1 1 0 0 1 1.414 0L12 10.586l4.293-4.293a1 1 0 1 1 1.414 1.414L13.414 12l4.293 4.293a1 1 0 0 1-1.414 1.414L12 13.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L10.586 12 6.293 7.707a1 1 0 0 1 0-1.414"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`<MatrixChat /> > with an existing session > onAction() > room actions > leave_room > for a space > should launch a confirmation modal 1`] = `
+<div
+  aria-describedby="mx_Dialog_content"
+  aria-labelledby="mx_BaseDialog_title"
+  class="mx_QuestionDialog mx_Dialog_fixedWidth"
+  data-focus-lock-disabled="false"
+  role="dialog"
+  tabindex="-1"
+>
+  <div
+    class="mx_Dialog_header"
+  >
+    <h1
+      class="mx_Heading_h3 mx_Dialog_title"
+      id="mx_BaseDialog_title"
+    >
+      Leave community
+    </h1>
+  </div>
+  <div
+    class="mx_Dialog_content"
+    id="mx_Dialog_content"
+  >
+    <span>
+      Are you sure you want to leave the community '!spaceRoom:server.org'?
+    </span>
+  </div>
+  <div
+    class="mx_Dialog_buttons"
+  >
+    <span
+      class="mx_Dialog_buttons_row"
+    >
+      <button
+        class="cancel"
+        data-testid="dialog-cancel-button"
+        type="button"
+      >
+        Cancel
+      </button>
+      <button
+        class="mx_Dialog_primary"
+        data-testid="dialog-primary-button"
+        type="button"
+      >
+        Leave
+      </button>
+    </span>
+  </div>
+  <div
+    aria-describedby="react-use-id-1"
+    aria-label="Close dialog"
+    class="mx_AccessibleButton mx_Dialog_cancelButton"
+    role="button"
+    tabindex="0"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.293 6.293a1 1 0 0 1 1.414 0L12 10.586l4.293-4.293a1 1 0 1 1 1.414 1.414L13.414 12l4.293 4.293a1 1 0 0 1-1.414 1.414L12 13.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L10.586 12 6.293 7.707a1 1 0 0 1 0-1.414"
+      />
+    </svg>
+  </div>
+</div>
+`;
